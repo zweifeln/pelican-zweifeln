@@ -1,0 +1,8 @@
+{% if article.podcast_file %}
+    <div class="center">
+        <audio controls>
+            <source src="/{{article.category}}{{ article.podcast_file }}" type="audio/mpeg" length="{{ article.mp3_bytes }}">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+{% endif %}

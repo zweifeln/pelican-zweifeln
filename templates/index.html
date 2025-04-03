@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for pg in pages %}
+        {% if pg.slug == "start" %}
+            <section id="content" class="body">
+                <header>
+                    <h2><a href="{{ SITEURL }}">{{ pg.title }}</a></h2>
+                </header>
+                {% import 'translations.html' as translations with context %}
+                {{ translations.translations_for(pg) }}
+                {{ pg.content }}
+            </section>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
